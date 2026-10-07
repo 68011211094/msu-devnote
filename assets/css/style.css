@@ -247,6 +247,17 @@ img {
     font-size: 0.85rem;
 }
 
+/* กลุ่มปุ่มแก้ไข/ลบ + ฟอร์มลบในแต่ละการ์ด */
+.note-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.note-form {
+    display: inline;
+}
+
 /* ป้ายกำกับหมวดหมู่ */
 .badge {
     display: inline-block;
