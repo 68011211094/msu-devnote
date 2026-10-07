@@ -11,6 +11,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// ส่ง Security Headers เพื่อกัน Clickjacking (การฝังเว็บเราใน iframe)
+// และกันการสลับชนิดไฟล์ (MIME sniffing) จากฝั่งเบราว์เซอร์
+header('X-Frame-Options: SAMEORIGIN');
+header('X-Content-Type-Options: nosniff');
+
 // คำนวณพาธของไฟล์ CSS/ลิงก์ ให้ถูกต้องทั้งหน้ารากและหน้าในโฟลเดอร์ย่อย (เช่น /admin/)
 $depth      = substr_count(dirname($_SERVER['SCRIPT_NAME']), '/');
 $basePath   = str_repeat('../', max($depth - 1, 0));

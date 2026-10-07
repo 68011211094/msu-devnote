@@ -9,6 +9,15 @@
 
 // เริ่ม Session ถ้ายังไม่เริ่ม (เก็บ Token ไว้ใน Session)
 if (session_status() === PHP_SESSION_NONE) {
+    // ตั้งค่า session cookie ให้ปลอดภัยขึ้น:
+    //   httponly = Block script อ่าน cookie, samesite = กัน CSRF ข้ามไซต์
+    //   secure   = ส่งผ่าน HTTPS เท่านั้น (ตอนนี้ localhost ยังไม่ใช่ HTTPS)
+    $useHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+    session_set_cookie_params([
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => $useHttps,
+    ]);
     session_start();
 }
 
