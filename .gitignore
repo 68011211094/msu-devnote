@@ -1,0 +1,10 @@
+# --- ความปลอดภัย: ไม่ให้ไฟล์ตั้งค่าฐานข้อมูลหลุดขึ้น GitHub ---
+config/database.php
+
+# --- ไฟล์ระบบและ log ---
+*.log
+.env
+
+# --- ไฟล์ OS ---
+.DS_Store
+Thumbs.db

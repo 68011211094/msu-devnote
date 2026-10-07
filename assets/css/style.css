@@ -1,0 +1,464 @@
+/* ============================================================
+   MSU DevNote - ธีม Minimalist "Academic Modern Slate"
+   สีหลัก: Off-white #f8f9fa / Slate #334155 / Accent Blue #2563eb
+   ============================================================ */
+
+/* --- 1. ตัวแปรสีและรูปแบบกลาง --- */
+:root {
+    --bg: #f8f9fa;           /* พื้นหลังโทน Off-white */
+    --surface: #ffffff;      /* การ์ดและกล่อง */
+    --slate: #334155;        /* ตัวอักษรหลัก */
+    --slate-light: #64748b;  /* ตัวอักษรองค์ประกอบ */
+    --border: #e2e8f0;       /* เส้นขอบบาง ๆ */
+    --accent: #2563eb;       /* สีน้ำเงิน Accent */
+    --accent-dark: #1d4ed8;
+    --danger: #dc2626;
+    --success: #16a34a;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+/* --- 2. ตั้งค่าพื้นฐาน --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--slate);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 3. ส่วนหัวและเมนูนำทาง --- */
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 60px;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--slate);
+    letter-spacing: 0.3px;
+}
+
+.logo:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.main-nav a {
+    color: var(--slate);
+    padding: 7px 12px;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+    background: var(--bg);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* ซ่อนกล่อง/ปุ่มเมนูบนจอใหญ่ */
+.nav-toggle-input,
+.nav-toggle-label {
+    display: none;
+}
+
+/* --- 4. ปุ่มกด --- */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s ease;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-sm {
+    padding: 7px 12px;
+    font-size: 0.9rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-dark);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--slate);
+    border-color: var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+    color: #ffffff;
+}
+
+.btn-success {
+    background: var(--success);
+    color: #ffffff;
+}
+
+.btn-success:hover {
+    background: #15803d;
+    color: #ffffff;
+}
+
+/* --- 5. เนื้อหาหน้า --- */
+.page-content {
+    flex: 1;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    color: var(--slate);
+}
+
+.section-subtitle {
+    color: var(--slate-light);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+/* --- 6. การ์ด --- */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.note-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.note-card p {
+    color: var(--slate-light);
+    font-size: 0.93rem;
+    margin-bottom: 14px;
+    white-space: pre-line;
+}
+
+.note-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+}
+
+.note-date {
+    color: var(--slate-light);
+    font-size: 0.85rem;
+}
+
+/* ป้ายกำกับหมวดหมู่ */
+.badge {
+    display: inline-block;
+    background: #eff6ff;
+    color: var(--accent);
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    padding: 3px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- 7. ฟอร์ม --- */
+.form-box {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.form-box-wide {
+    max-width: 720px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--slate);
+    background: var(--bg);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--surface);
+}
+
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-hint {
+    font-size: 0.82rem;
+    color: var(--slate-light);
+    margin-top: 4px;
+}
+
+.form-footer {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--slate-light);
+}
+
+/* --- 8. ข้อความแจ้งเตือน --- */
+.alert {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-bottom: 18px;
+    font-size: 0.93rem;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background: #f0fdf4;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+.alert-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+.alert-info {
+    background: #eff6ff;
+    color: #1e40af;
+    border-color: #bfdbfe;
+}
+
+/* --- 9. ตารางข้อมูล --- */
+.table-wrap {
+    overflow-x: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+table.table th,
+table.table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.93rem;
+}
+
+table.table th {
+    background: var(--bg);
+    font-weight: 700;
+    color: var(--slate);
+}
+
+table.table tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- 10. ส่วนท้าย --- */
+.site-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+}
+
+.footer-inner {
+    padding: 20px;
+    text-align: center;
+    color: var(--slate-light);
+    font-size: 0.87rem;
+}
+
+/* --- 11. สถานะว่าง / ตัวช่วย --- */
+.empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--slate-light);
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+}
+
+.empty-state p {
+    margin-bottom: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 16px;
+}
+
+.mb-3 {
+    margin-bottom: 16px;
+}
+
+/* --- 12. ปรับเมนูสำหรับจอโทรศัพท์ --- */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--slate);
+        cursor: pointer;
+        padding: 4px 8px;
+        user-select: none;
+    }
+
+    /* ปิดเมนูไว้ก่อน รอให้กดปุ่ม hamburger */
+    .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: 12px;
+    }
+
+    .main-nav a {
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* เมื่อติ๊กถูก → แสดงเมนู */
+    .nav-toggle-input:checked ~ .main-nav {
+        display: flex;
+    }
+
+    .page-content {
+        padding: 22px 16px;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+}
