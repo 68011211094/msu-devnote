@@ -270,6 +270,13 @@ img {
     font-weight: 600;
 }
 
+/* ป้ายสิทธิ์ผู้ดูแลระบบ */
+.badge-admin {
+    background: #fef2f2;
+    color: var(--danger);
+    border-color: #fecaca;
+}
+
 /* --- 7. ฟอร์ม --- */
 .form-box {
     max-width: 520px;
